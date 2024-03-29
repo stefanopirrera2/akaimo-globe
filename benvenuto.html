@@ -80,4 +80,13 @@
 
 <script>
 // Script per impostare il nome dell'utente
-document.addEventListener('DOMContentLoaded',
+document.addEventListener('DOMContentLoaded', function() {
+    var nome = localStorage.getItem('nomeUtente');
+    if (nome) {
+        document.getElementById('nomeUtente').textContent = nome; // Assicurati che l'ID corrisponda all'elemento HTML dove vuoi mostrare il nome
+    }
+});
+</script>
+
+</body>
+</html>
