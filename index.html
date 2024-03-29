@@ -90,9 +90,9 @@
 <script>
 function inviaNome() {
     var nome = document.getElementById('nomeUtente').value;
-    if(nome) {
+    if (nome) {
         localStorage.setItem('nomeUtente', nome);
-        window.location.href = 'benvenuto.html'; 
+        window.location.href = 'benvenuto.html'; // Reindirizza alla pagina di benvenuto
     } else {
         alert("Per favore, inserisci il tuo nome.");
     }
