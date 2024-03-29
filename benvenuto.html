@@ -5,48 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benvenuto su AKAIMO GLOBE</title>
     <style>
-                .content-box {
-            border: 2px solid black; 
-            padding: 20px; 
-            margin: 20px auto; 
-            max-width: 800px; 
-            text-align: justify; 
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('sfondobenvenuto.png') no-repeat center center fixed;
+            background-size: cover;
         }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            background-color: transparent
+        }
+        .header img {
+            height: 100px;
+        }
+        .header h1 {
+            margin-left: 20px;
+            color: black;
+            text-shadow: -1px -1px 0 #fff,  
+                         1px -1px 0 #fff,
+                        -1px  1px 0 #fff,
+                         1px  1px 0 #fff;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+            position: relative;
+            top: 100px;
+        }
+        .welcome-text {
+            color: black;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        /* Aggiungi altre regole CSS come preferisci */
     </style>
 </head>
 <body>
 
-<div style="display: flex; align-items: justify; justify-content: justify;">
-    <img src="logoakaimo.png" alt="Logo AKAIMO GLOBE" style="height: 100px;">
-    <h1 style="margin-left: 20px;">AKAIMO GLOBE</h1> 
+<div class="header">
+    <img src="logoakaimo.png" alt="Logo AKAIMO GLOBE">
+    <h1>AKAIMO GLOBE</h1> 
 </div>
 
-<h2><div align= "center">Benvenut@, <span id="nomeUtente">Ospite</span>!</h2>
-<h3 id="siteInfo"><div align= "center">Seguici sui nostri social <a href="https://www.instagram.com/akaimo_globe/">@akaimo_globe</a></h3>
-
 <div class="content-box">
-    <p>La cura del nostro pianeta non è mai stata così importante come ora. In AKAIMO GLOBE, ci dedichiamo a fornire servizi innovativi e sostenibili che contribuiscono alla salvaguardia dell'ambiente. La nostra missione è aiutare individui, comunità e aziende a compiere scelte eco-consapevoli che guidino verso un futuro più verde e pulito.</p>
-
-    
-    <p>I nostri servizi:</p>
+    <h2>Benvenuto su AKAIMO GLOBE</h2>
+    <p class="welcome-text">
+        Benvenut@, <span id="nomeUtente">Ospite</span>!
+        Seguici sui nostri social <a href="https://www.instagram.com/akaimo_globe/">@akaimo_globe</a>.
+    </p>
+    <p class="welcome-text">
+        La cura del nostro pianeta non è mai stata così importante come ora. In AKAIMO GLOBE, ci dedichiamo a fornire servizi innovativi e sostenibili che contribuiscono alla salvaguardia dell'ambiente. La nostra missione è aiutare individui, comunità e aziende a compiere scelte eco-consapevoli che guidino verso un futuro più verde e pulito.
+    </p>
+    <p class="welcome-text">I nostri servizi:</p>
     <ul>
         <li>Raccolta e Riciclo Rifiuti: Il nostro servizio di gestione dei rifiuti non è solo efficiente; è intelligente...</li>
         <li>Consulenza Ambientale: Forniamo expertise e consulenza per aiutare le aziende a ridurre la loro impronta ecologica...</li>
         <li>Energia Rinnovabile: Investiamo nella ricerca e promuoviamo l'adozione di fonti di energia rinnovabile...</li>
         <li>Educazione Ambientale: Crediamo nell'istruzione come forza motrice del cambiamento...</li>
     </ul>
-    <p>In AKAIMO GLOBE, l'innovazione incontra l'ambiente. Unitevi a noi nel nostro viaggio per un mondo più sano, pulito e sostenibile. Per saperne di più sui nostri servizi o per iniziare la vostra transizione verso la sostenibilità, contattateci oggi stesso.</p>
+    <p class="welcome-text">
+        In AKAIMO GLOBE, l'innovazione incontra l'ambiente. Unitevi a noi nel nostro viaggio per un mondo più sano, pulito e sostenibile. Per saperne di più sui nostri servizi o per iniziare la vostra transizione verso la sostenibilità, contattateci oggi stesso.
+    </p>
 </div>
 
 <script>
 // Script per impostare il nome dell'utente
-document.addEventListener('DOMContentLoaded', function() {
-    var nome = localStorage.getItem('nomeUtente');
-    if(nome) {
-        document.getElementById('nomeUtente').textContent = nome;
-    }
-});
-</script>
-
-</body>
-</html>
+document.addEventListener('DOMContentLoaded',
