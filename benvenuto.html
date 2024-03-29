@@ -10,51 +10,67 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            background: url('sfondobenvenuto.png') no-repeat center center fixed;
-            background-size: cover;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        video#background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
         }
         .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
             display: flex;
             align-items: center;
             justify-content: flex-start;
             padding: 20px;
-            background-color: transparent
+            z-index: 2;
         }
         .header img {
             height: 100px;
         }
         .header h1 {
             margin-left: 20px;
-            color: black;
-            text-shadow: -1px -1px 0 #fff,  
-                         1px -1px 0 #fff,
-                        -1px  1px 0 #fff,
-                         1px  1px 0 #fff;
+            color: white; 
+            text-shadow: 1px 1px 4px #000; 
         }
         .content-box {
             background-color: white;
             border-radius: 10px;
             padding: 20px;
-            margin: 50px auto;
+            width: 80%; /* O la larghezza preferita */
             max-width: 800px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: justify;
-            position: relative;
-            top: 100px;
+            z-index: 1;
+            overflow-y: auto; /* Per lo scrolling se il contenuto supera l'altezza della box */
         }
         .welcome-text {
             color: black;
-            margin: 20px 0;
+            margin-top: 0; /* Rimuove il margine superiore per far partire il testo dall'alto */
             line-height: 1.6;
         }
-        /* Aggiungi altre regole CSS come preferisci */
     </style>
 </head>
 <body>
 
+<video id="background-video" autoplay loop muted>
+    <source src="sfondobenvenuto2.mp4" type="video/mp4">
+    Il tuo browser non supporta il tag video.
+</video>
+
 <div class="header">
     <img src="logoakaimo.png" alt="Logo AKAIMO GLOBE">
-    <h1>AKAIMO GLOBE</h1> 
+    <h1>AKAIMO GLOBE</h1>
 </div>
 
 <div class="content-box">
@@ -76,16 +92,16 @@
     <p class="welcome-text">
         In AKAIMO GLOBE, l'innovazione incontra l'ambiente. Unitevi a noi nel nostro viaggio per un mondo più sano, pulito e sostenibile. Per saperne di più sui nostri servizi o per iniziare la vostra transizione verso la sostenibilità, contattateci oggi stesso.
     </p>
+
 </div>
 
 <script>
-// Script per impostare il nome dell'utente
-document.addEventListener('DOMContentLoaded', function() {
-    var nome = localStorage.getItem('nomeUtente');
-    if (nome) {
-        document.getElementById('nomeUtente').textContent = nome; // Assicurati che l'ID corrisponda all'elemento HTML dove vuoi mostrare il nome
-    }
-});
+    document.addEventListener('DOMContentLoaded', function() {
+        var nome = localStorage.getItem('nomeUtente');
+        if (nome) {
+            document.getElementById('nomeUtente').textContent = nome;
+        }
+    });
 </script>
 
 </body>
