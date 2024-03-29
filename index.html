@@ -4,17 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accesso AKAIMO GLOBE</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('sfondoglobo.png') no-repeat center center fixed; 
+            background-size: cover;
+            opacity: 0.9;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+        .header img {
+            height: 100px;
+        }
+        .header h1 {
+            margin-left: 20px;
+            color: black;
+            text-shadow: -1px -1px 0 #fff,  
+                         1px -1px 0 #fff,
+                        -1px  1px 0 #fff,
+                         1px  1px 0 #fff;
+        }
+        h2 {
+            text-align: center;
+            color: white;
+            margin-top: 20px; /* Regola questo valore per posizionare il titolo dove preferisci */
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            z-index: 1;
+        }
+        input[type="text"], button {
+            font-size: 1em;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #009879;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #007f67;
+        }
+	h2 {
+            color: white; /* Colore del testo bianco */
+            text-align: center;
+            margin-top: 20px; /* Adegua a seconda della posizione desiderata sulla pagina */
+            /* Aggiunta di ombre multiple per creare un effetto di bordo nero */
+            text-shadow: 
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000;
+            /* Puoi aumentare la dimensione dell'ombra per rendere il bordo più spesso */
+        }
+    </style>
 </head>
 <body>
 
-<div style="display: flex; align-items: center; justify-content: left;">
-	<img src="logoakaimo.png" alt="Logo AKAIMO GLOBE" style="height: 100px;">
-	<h1 style="margin-left: 20px;">AKAIMO GLOBE</h1> 
+<div class="header">
+    <img src="logoakaimo.png" alt="Logo AKAIMO GLOBE">
+    <h1>AKAIMO GLOBE</h1> 
 </div>
 
-<h2><div align= "center">Inserisci il tuo nome per continuare</h2><div align= "center">
-<input type="text" id="nomeUtente" placeholder="Il tuo nome">
-<button onclick="inviaNome()">Invia</button>
+<div class="content-container">
+    <h2>Inserisci il tuo nome per continuare</h2>
+    <input type="text" id="nomeUtente" placeholder="Il tuo nome">
+    <button onclick="inviaNome()">Invia</button>
+</div>
 
 <script>
 function inviaNome() {
