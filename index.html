@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesso AKAIMO GLOBE</title>
+</head>
+<body>
+
+<div style="display: flex; align-items: center; justify-content: center;">
+	<img src="logoakaimo.png" alt="Logo AKAIMO GLOBE" style="height: 100px;">
+	<h1 style="margin-left: 20px;">AKAIMO GLOBE</h1> 
+</div>
+
+<h2>Inserisci il tuo nome per continuare</h2>
+<input type="text" id="nomeUtente" placeholder="Il tuo nome">
+<button onclick="inviaNome()">Invia</button>
+
+<script>
+function inviaNome() {
+    var nome = document.getElementById('nomeUtente').value;
+    if(nome) {
+        localStorage.setItem('nomeUtente', nome);
+        window.location.href = 'benvenuto.html'; 
+    } else {
+        alert("Per favore, inserisci il tuo nome.");
+    }
+}
+</script>
+
+</body>
+</html>
