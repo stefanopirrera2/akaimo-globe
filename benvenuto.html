@@ -10,7 +10,6 @@
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,7 +43,7 @@
             text-shadow: 1px 1px 4px #000; 
         }
         .content-box {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.5);
             border-radius: 10px;
             padding: 20px;
             width: 80%; /* O la larghezza preferita */
@@ -53,11 +52,42 @@
             text-align: justify;
             z-index: 1;
             overflow-y: auto; /* Per lo scrolling se il contenuto supera l'altezza della box */
+            position: relative;
+            top: 60px;
         }
         .welcome-text {
             color: black;
             margin-top: 0; /* Rimuove il margine superiore per far partire il testo dall'alto */
             line-height: 1.6;
+        }
+        /* Responsività per dispositivi mobili */
+        @media screen and (max-width: 768px) {
+            .content-box {
+                width: 95%; /* Più stretto per schermi piccoli */
+                padding: 15px; /* Padding ridotto */
+            }
+            .welcome-text {
+                font-size: 14px; /* Testo più piccolo per leggibilità */
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .header {
+                position: static; /* Rimuovi la posizione assoluta */
+                justify-content: center; /* Centra il logo e la scritta */
+                padding: 10px 0; /* Padding ridotto */
+            }
+            .header img, .header h1 {
+                display: none; /* Nascondi il logo e la scritta su schermi molto piccoli se necessario */
+            }
+            .content-box {
+                margin-top: 20px; /* Spazio aggiuntivo dal header */
+                width: 100%; /* Usa tutta la larghezza disponibile */
+                box-shadow: none; /* Rimuovi ombre che potrebbero essere invasive */
+                top: 30px; /* Riduci la distanza dal top */
+            }
+            .welcome-text {
+                font-size: 12px; /* Testo ancora più piccolo per schermi molto piccoli */
+            }
         }
     </style>
 </head>
